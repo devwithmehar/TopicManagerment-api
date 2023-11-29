@@ -1,16 +1,24 @@
 package com.managementtool.apidata.topic;
 
-import java.util.UUID;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
+@Entity
 public class Topic {
     
+    @Id
     private String id;
     private String name;
     private String description;
 
-    public Topic(String name, String description){
+    //Empty Consutructor
+    public Topic(){
+
+    }
+
+    public Topic(String id, String name, String description){
         super();
-        this.id = UUID.randomUUID().toString();
+        this.id = id;
         this.name = name;
         this.description = description;
     }
