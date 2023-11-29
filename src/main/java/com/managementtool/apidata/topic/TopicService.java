@@ -28,7 +28,7 @@ public class TopicService  {
 
     // Time Complexity will be O(n)
     public Topic getTopic(String id){
-      return  topics.stream().filter(t -> t.getId().equals(id)).findFirst().get();
+      return  topicRepository.findById(id).get();
     }
 
 
@@ -37,16 +37,11 @@ public class TopicService  {
     }
 
     public void updateTopic(String id, Topic topic){
-       for(int i = 0; i < topics.size(); i++){
-         Topic t = topics.get(i);
-         if(t.getId().equals(id)){
-            topics.set(i,topic);
-            return;
-         }
-       }
+       topicRepository.save(topic);
     }
 
     public void deleteTopic(String id){
-        topics.removeIf(t -> t.getId().equals(id));
+        Topic topic = getTopic(id);
+        topicRepository.delete(topic);
     }
 }
