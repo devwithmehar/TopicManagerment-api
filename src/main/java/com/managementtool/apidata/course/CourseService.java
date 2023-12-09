@@ -13,7 +13,7 @@ public class CourseService {
     @Autowired
     private CourseRepository courseRepository;
 
-    public List<Course> findAllCourses(){
+    public List<Course> getAllCourses(){
         List<Course> courses = new ArrayList<>();
         courseRepository.findAll().forEach(courses:: add);
         return courses;
