@@ -10,7 +10,6 @@ This Spring Boot application provides APIs for managing topics and courses.
 - [Usage](#usage)
   - [Topics](#topics)
   - [Courses](#courses)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Introduction
@@ -111,5 +110,7 @@ Delete a Course
 ```bash
 DELETE /topics/{topicId}/courses/{id}
 ```
+
+## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
